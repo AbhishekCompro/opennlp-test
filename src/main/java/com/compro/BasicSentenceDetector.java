@@ -36,14 +36,24 @@ import org.slf4j.LoggerFactory;
 
 public class BasicSentenceDetector {
     public static void main(String[] args) throws InvalidFormatException,
-            IOException {	String paragraph = "Hi. How are you? This is Mike.";
+            IOException {	
+    	
+    	String input = "Double-click This PC to open the Open dialog box. Alternatively, on the Open page, click Browse (alternatively, click This PC,";
+    	
+    	/*	String input = "and then click the Documents folder).";
+    		
+    		String input = "In the Documents folder, click the a01h1DVDs file,";
+    		
+    		String input = "and then click Open.";
+    		
+    		String input = "Alternatively, double-click the a01h1DVDs file (or click the file, click the Open arrow,";*/
             
         	// always start with a model, a model is learned from training data
         	InputStream is = new FileInputStream("input/en-sent.bin");
         	SentenceModel model = new SentenceModel(is);
         	SentenceDetectorME sdetector = new SentenceDetectorME(model);
          
-        	String sentences[] = sdetector.sentDetect(paragraph);
+        	String sentences[] = sdetector.sentDetect(input);
          
         	System.out.println(sentences[0]);
         	System.out.println(sentences[1]);

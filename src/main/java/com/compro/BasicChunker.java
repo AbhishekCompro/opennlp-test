@@ -41,7 +41,15 @@ public class BasicChunker {
 	PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
 	POSTaggerME tagger = new POSTaggerME(model);
  
-	String input = "Hi. How are you? This is Mike.";
+	String input = "Double-click This PC to open the Open dialog box. Alternatively, on the Open page, click Browse (alternatively, click This PC,";
+	
+/*	String input = "and then click the Documents folder).";
+	
+	String input = "In the Documents folder, click the a01h1DVDs file,";
+	
+	String input = "and then click Open.";
+	
+	String input = "Alternatively, double-click the a01h1DVDs file (or click the file, click the Open arrow,";*/
 	ObjectStream<String> lineStream = new PlainTextByLineStream(
 			new StringReader(input));
  
